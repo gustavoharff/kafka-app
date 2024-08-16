@@ -1,0 +1,17 @@
+ktor:
+  application:
+    modules:
+      - example.com.ApplicationKt.module
+  deployment:
+    port: 8080
+  kafka:
+    producer:
+      client:
+        id: "kafka-consumer"
+      bootstrap:
+        servers:
+          - "localhost:9092"
+      key:
+        serializer: "org.apache.kafka.common.serialization.LongSerializer"
+      value:
+        serializer: "org.apache.kafka.common.serialization.StringSerializer"
